@@ -1,0 +1,5 @@
+export { experienceQuestions } from './data/experienceQuestions'
+export { ExperienceSection } from './components/ExperienceSection'
+export { HeroSection } from './components/HeroSection'
+export { WineCard } from './components/WineCard'
+export { WineGrid } from './components/WineGrid'

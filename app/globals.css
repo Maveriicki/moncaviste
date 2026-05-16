@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #FBF7F2;
+  font-family: Arial, sans-serif;
+}
+
+@layer components {
+  .dashboard-input {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid #E8DDD0;
+    background: #FBF7F2;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #1C0D12;
+    outline: none;
+    transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .dashboard-input::placeholder {
+    color: #A8909A;
+  }
+
+  .dashboard-input:focus {
+    border-color: #7B1D2E;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(123, 29, 46, 0.08);
+  }
+}
