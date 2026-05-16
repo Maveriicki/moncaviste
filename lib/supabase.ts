@@ -3,7 +3,10 @@
 // Helpers Supabase — client browser SSR compatible
 // ============================================================
 
+import { createClient } from '@supabase/supabase-js'
+
 export { supabase } from './supabase/client'
+
 import type {
   Caviste,
   Wine,
@@ -14,6 +17,27 @@ import type {
 } from '@/types/database'
 
 import { supabase } from './supabase/client'
+
+// ============================================================
+// ADMIN CLIENT
+// ============================================================
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+
+export function createAdminClient() {
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
+
+  return createClient(
+    supabaseUrl,
+    serviceKey,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    }
+  )
+}
 
 // ============================================================
 // HELPERS — Cavistes
