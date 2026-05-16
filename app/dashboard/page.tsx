@@ -13,5 +13,15 @@ export default async function DashboardPage() {
     redirect('/login')
   }
 
+  const { data: caviste } = await supabase
+    .from('cavistes')
+    .select('*')
+    .eq('user_id', user.id)
+    .single()
+
+  if (!caviste) {
+    redirect('/onboarding')
+  }
+
   return <DashboardClient />
 }
