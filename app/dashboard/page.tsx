@@ -1,15 +1,7 @@
-import { createClient } from '@/lib/supabase/server'
-
-export default async function DashboardPage() {
-  const supabase = await createClient()
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
+export default function DashboardPage() {
   return (
-    <pre style={{ padding: 40 }}>
-      {JSON.stringify(user, null, 2)}
-    </pre>
+    <div style={{ padding: 40 }}>
+      <h1>DASHBOARD OK</h1>
+    </div>
   )
 }
