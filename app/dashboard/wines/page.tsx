@@ -1,3 +1,3 @@
-import DashboardPage from '../page'
+import DashboardPage from '../DashboardClient'
 
 export default DashboardPage
