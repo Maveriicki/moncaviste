@@ -3,6 +3,7 @@
 // Helpers Supabase — client browser SSR compatible
 // ============================================================
 
+export { supabase } from './supabase/client'
 import type {
   Caviste,
   Wine,
