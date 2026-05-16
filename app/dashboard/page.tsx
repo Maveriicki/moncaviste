@@ -1,7 +1,17 @@
-export default function DashboardPage() {
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>DASHBOARD OK</h1>
-    </div>
-  )
+import { redirect } from 'next/navigation'
+import DashboardClient from './DashboardClient'
+import { createClient } from '@/lib/supabase/server'
+
+export default async function DashboardPage() {
+  const supabase = await createClient()
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  if (!user) {
+    redirect('/login')
+  }
+
+  return <DashboardClient />
 }
