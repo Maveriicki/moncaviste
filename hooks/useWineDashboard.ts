@@ -154,6 +154,7 @@ export function useWineDashboard() {
     setSaving(true)
 
     const position = wines.length + 1
+    console.log('SAVE FORM', form)
     const response =
       formMode === 'edit' && editingWine
         ? await updateDashboardWine(editingWine.id, form)
