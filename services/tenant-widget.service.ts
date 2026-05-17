@@ -22,9 +22,11 @@ export async function getTenantWidgetData(
   }
 
   const { data: wines } = await supabase
-    .from('wines')
-    .select('*')
-    .eq('caviste_id', caviste.id)
+  .from('wines')
+  .select('*')
+  .eq('caviste_id', caviste.id)
+  .eq('in_stock', true)
+  .order('position', { ascending: true })
 
   return {
     caviste: caviste as Caviste,
