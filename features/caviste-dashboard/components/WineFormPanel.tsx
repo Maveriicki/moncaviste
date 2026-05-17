@@ -330,7 +330,7 @@ function ImageDropzone({
             : 'border-[#DDCFC3]'
         }`}
       >
-        <div className="aspect-[3/4]">
+        <div className="aspect-[3/4] min-h-[320px]">
           <WineImage src={imageUrl} alt={imageAlt} />
         </div>
 
