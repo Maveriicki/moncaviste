@@ -252,7 +252,10 @@ export function useWineDashboard() {
 
     setImageUploading(true)
     const response = await uploadWineBottleImage(caviste.id, file)
-    setImageUploading(false)
+
+console.log('UPLOAD RESPONSE', response)
+
+setImageUploading(false)
 
     if (response.error || !response.data) {
       pushToast({
