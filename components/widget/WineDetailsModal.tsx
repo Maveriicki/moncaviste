@@ -15,6 +15,9 @@ export function WineDetailsModal({
 }: WineDetailsModalProps) {
   if (!open || !wine) return null
 
+  const isMobile =
+    typeof window !== 'undefined' && window.innerWidth < 900
+
   return (
     <div
       onClick={onClose}
@@ -27,7 +30,7 @@ export function WineDetailsModal({
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: 9999,
-        padding: '24px',
+        padding: isMobile ? '12px' : '24px',
       }}
     >
       <div
@@ -39,8 +42,9 @@ export function WineDetailsModal({
           borderRadius: '32px',
           overflow: 'hidden',
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          minHeight: '720px',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+          maxHeight: '92vh',
+          overflowY: 'auto',
           boxShadow: '0 30px 80px rgba(0,0,0,.4)',
         }}
       >
@@ -48,7 +52,7 @@ export function WineDetailsModal({
           style={{
             background:
               'linear-gradient(135deg,#220E17,#4E1020,#7B1D2E)',
-            padding: '40px',
+            padding: isMobile ? '24px' : '40px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -57,8 +61,8 @@ export function WineDetailsModal({
           <div
             style={{
               width: '100%',
-              maxWidth: '420px',
-              height: '620px',
+              maxWidth: isMobile ? '260px' : '420px',
+              height: isMobile ? '420px' : '620px',
               borderRadius: '24px',
               overflow: 'hidden',
               background: '#fff',
@@ -73,7 +77,7 @@ export function WineDetailsModal({
 
         <div
           style={{
-            padding: '56px',
+            padding: isMobile ? '28px' : '56px',
             overflowY: 'auto',
           }}
         >
@@ -114,7 +118,7 @@ export function WineDetailsModal({
 
           <h1
             style={{
-              fontSize: '52px',
+              fontSize: isMobile ? '36px' : '52px',
               lineHeight: 1,
               color: '#2A1018',
               marginBottom: '16px',
@@ -125,7 +129,7 @@ export function WineDetailsModal({
 
           <p
             style={{
-              fontSize: '20px',
+              fontSize: isMobile ? '16px' : '20px',
               color: '#8D7C82',
               marginBottom: '24px',
             }}
@@ -135,7 +139,7 @@ export function WineDetailsModal({
 
           <div
             style={{
-              fontSize: '42px',
+              fontSize: isMobile ? '32px' : '42px',
               fontWeight: 700,
               color: '#7B1D2E',
               marginBottom: '40px',
@@ -161,7 +165,7 @@ export function WineDetailsModal({
               style={{
                 color: '#4A3A40',
                 lineHeight: 1.8,
-                fontSize: '17px',
+                fontSize: isMobile ? '15px' : '17px',
               }}
             >
               {wine.description || 'Aucune description.'}
