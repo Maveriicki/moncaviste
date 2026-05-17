@@ -18,7 +18,7 @@ export function TenantCatalog({
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))',
-          gap: '24px',
+          gap: '28px',
         }}
       >
         {wines.map((wine) => (
@@ -26,7 +26,7 @@ export function TenantCatalog({
             key={wine.id}
             style={{
               background: '#fff',
-              borderRadius: '24px',
+              borderRadius: '28px',
               overflow: 'hidden',
               boxShadow: '0 10px 30px rgba(0,0,0,.08)',
             }}
@@ -51,12 +51,12 @@ export function TenantCatalog({
               />
             )}
 
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '24px' }}>
               <h2
                 style={{
-                  fontSize: '22px',
+                  fontSize: '28px',
                   color: '#2B1018',
-                  marginBottom: '8px',
+                  marginBottom: '10px',
                 }}
               >
                 {wine.name}
@@ -65,7 +65,8 @@ export function TenantCatalog({
               <p
                 style={{
                   color: '#8A7B80',
-                  marginBottom: '12px',
+                  marginBottom: '16px',
+                  fontSize: '16px',
                 }}
               >
                 {wine.region}
@@ -73,10 +74,10 @@ export function TenantCatalog({
 
               <p
                 style={{
-                  fontSize: '26px',
+                  fontSize: '34px',
                   fontWeight: 700,
                   color: '#7B1D2E',
-                  marginBottom: '20px',
+                  marginBottom: '24px',
                 }}
               >
                 {wine.price} €
@@ -90,9 +91,10 @@ export function TenantCatalog({
                   background:
                     'linear-gradient(135deg,#7B1D2E,#A32940)',
                   color: '#fff',
-                  padding: '14px',
-                  borderRadius: '14px',
+                  padding: '16px',
+                  borderRadius: '16px',
                   fontWeight: 700,
+                  fontSize: '16px',
                   cursor: 'pointer',
                 }}
               >
