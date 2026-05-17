@@ -188,20 +188,22 @@ export function WineDetailsModal({
                 flexWrap: 'wrap',
               }}
             >
-              {(wine.occasions || []).map((item: string) => (
-                <span
-                  key={item}
-                  style={{
-                    background: '#EFE7EA',
-                    padding: '10px 16px',
-                    borderRadius: '999px',
-                    color: '#5E434B',
-                    fontSize: '14px',
-                  }}
-                >
-                  {item}
-                </span>
-              ))}
+              {Array.isArray(wine.occasions)
+                ? wine.occasions.map((item: string) => (
+                    <span
+                      key={item}
+                      style={{
+                        background: '#EFE7EA',
+                        padding: '10px 16px',
+                        borderRadius: '999px',
+                        color: '#5E434B',
+                        fontSize: '14px',
+                      }}
+                    >
+                      {item}
+                    </span>
+                  ))
+                : null}
             </div>
           </section>
 

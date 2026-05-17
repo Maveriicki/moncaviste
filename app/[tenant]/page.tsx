@@ -3,15 +3,17 @@ import { getTenantWidgetData } from '@/services/tenant-widget.service'
 import { TenantCatalog } from '@/components/widget/TenantCatalog'
 
 interface TenantPageProps {
-  params: {
+  params: Promise<{
     tenant: string
-  }
+  }>
 }
 
 export default async function TenantPage({
   params,
 }: TenantPageProps) {
-  const data = await getTenantWidgetData(params.tenant)
+  const { tenant } = await params
+
+  const data = await getTenantWidgetData(tenant)
 
   if (!data.caviste) {
     notFound()
