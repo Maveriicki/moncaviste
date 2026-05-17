@@ -39,8 +39,10 @@ export function WineFormPanel({
   const [imageMessage, setImageMessage] = useState<string | null>(null)
 
   useEffect(() => {
-    if (open) setForm(initialValues)
-  }, [initialValues, open])
+  if (open) {
+    setForm(initialValues)
+  }
+}, [open])
 
   if (!open) return null
 
