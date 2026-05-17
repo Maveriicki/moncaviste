@@ -17,7 +17,7 @@ export function TenantCatalog({
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))',
+          gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))',
           gap: '24px',
         }}
       >
@@ -37,14 +37,14 @@ export function TenantCatalog({
                 alt={wine.name}
                 style={{
                   width: '100%',
-                  height: '320px',
+                  height: '460px',
                   objectFit: 'cover',
                 }}
               />
             ) : (
               <div
                 style={{
-                  height: '320px',
+                  height: '460px',
                   background:
                     'linear-gradient(135deg,#2A0E16,#7B1D2E,#D9B96F)',
                 }}
